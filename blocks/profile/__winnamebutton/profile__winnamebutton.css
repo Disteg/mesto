@@ -1,0 +1,13 @@
+.profile__winnamebutton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  
+  @media screen and (max-width: 430px) {
+    .profile__winnamebutton {
+      width: 88vw;
+      justify-content: space-between;    
+    }
+  }

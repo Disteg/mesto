@@ -1,0 +1,7 @@
+.element__like {
+    width: 21px;
+    height: 18px;
+    background-image: url(../../../images/Groupheart.svg);
+    box-sizing: border-box;
+    border: none;
+    background-color: white;}
