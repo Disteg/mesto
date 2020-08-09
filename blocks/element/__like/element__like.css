@@ -4,4 +4,10 @@
     background-image: url(../../../images/Groupheart.svg);
     box-sizing: border-box;
     border: none;
-    background-color: white;}
+    background-color: white;
+    cursor: pointer;
+}
+
+.element__like:hover {
+    opacity: 0.8;
+}

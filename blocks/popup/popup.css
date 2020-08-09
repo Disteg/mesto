@@ -2,10 +2,9 @@
 @import url(./__close/popup__close.css);
 @import url(./__heading/popup__heading.css);
 @import url(./__save/popup__save.css);
-@import url(./__input/popup__input.css);
-@import url(./__proffesional/__inpur_proffesional.css);
+@import url(./__proffesional/__input_proffesional.css);
 @import url(./__name/__input_name.css);
-@import url(./__line/popup__line.css);
+@import url(./__input/popup__input.css);
 
 .popup {
     display: none;

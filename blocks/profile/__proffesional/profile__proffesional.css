@@ -1,19 +1,16 @@
 .profile__proffesional {
     margin: 0;
+    text-overflow: ellipsis;
     padding-top: 16px;
-    font-family: Inter;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;}
   
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 550px) {
   .profile__proffesional {
     padding-top: 14px;
-    font-family: Inter;
-    font-style: normal;
-    font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;}
+  text-align: center;}
   }
