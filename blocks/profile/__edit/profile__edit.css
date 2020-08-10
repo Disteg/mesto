@@ -1,7 +1,8 @@
 .profile__edit {
     width: 24px;
     height: 24px;
-    background-image: url(../../../images/Edit_Button.svg);
+    background-image: url(../../../images/karandash.png);
+    border: 1px solid white;
     background-repeat: no-repeat;
     background-position: center;
     background-color: black;
