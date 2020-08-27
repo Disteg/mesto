@@ -1,8 +1,3 @@
-
-
-
-
-
 const initialCards = [
     {
         name: 'Архыз',
@@ -56,19 +51,19 @@ initialCards.forEach((temcard) => {
 
 //Добавление карточки
 
-const cardname = CardPopup.querySelector('#cardnamepop').value;
-const cardlink = CardPopup.querySelector('#cardlinkpop').value;
+const cardname = CardPopup.querySelector('#cardnamepop');
+const cardlink = CardPopup.querySelector('#cardlinkpop');
 function formSubmitPic(evt){
   const newCard = {
-      name: cardname, 
-      link: cardlink
+      name: cardname.value,
+      link: cardlink.value
     };
   evt.preventDefault();
   CloseCardPopup(AddCard); 
   SectionElementCard.prepend(createCard(newCard));
 }
 CardPopup.addEventListener('submit', formSubmitPic);
-
+  
 
 
 
