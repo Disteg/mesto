@@ -56,15 +56,18 @@ initialCards.forEach((temcard) => {
 
 //Добавление карточки
 
-const cardname = CardPopup.querySelector('#cardnamepop');//название картинки в форме
-const cardlink = CardPopup.querySelector('#cardlinkpop');//ссылка на картинку в форме
-function formSubmitPic(evt){ //функция добавления нового элемента
-  const newCard = {name: cardname.value, link: cardlink.value};
+const cardname = CardPopup.querySelector('#cardnamepop').value;
+const cardlink = CardPopup.querySelector('#cardlinkpop').value;
+function formSubmitPic(evt){
+  const newCard = {
+      name: cardname, 
+      link: cardlink
+    };
   evt.preventDefault();
-  CloseCardPopup(AddCard); //закрываем Попап добавления картинок-элементов
-  SectionElementCard.append(createCard(temcard));
+  CloseCardPopup(AddCard); 
+  SectionElementCard.prepend(createCard(newCard));
 }
-CardPopup.addEventListener('submit', formSubmitPic);// задействуем форму добавления элемента по клику
+CardPopup.addEventListener('submit', formSubmitPic);
 
 
 
