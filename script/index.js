@@ -32,3 +32,26 @@ function formSubmitHandler (evt) {
 
 form.addEventListener('submit', formSubmitHandler);
 
+//Открытие попап карточки
+
+let CardPopup = document.querySelector('.card'); //Попап формы карточки
+
+let OpenCardPopup = () =>{
+    CardPopup.classList.add('card__open'); } //Функция открытие попапа
+
+let ProfileAddButton = document.querySelector('.profile__add'); //Кнопка открытия/ добавления
+
+ProfileAddButton.addEventListener('click', OpenCardPopup); // Обработчик
+
+//Закрытие покапа карточки
+
+let ClosePopupButton = document.querySelector('.card__close');
+let CloseCardPopup = () =>{
+    CardPopup.classList.remove('card__open');
+}
+
+ClosePopupButton.addEventListener('click', CloseCardPopup );
+
+//Кнопка добавления
+
+let AddCard = document.querySelector('card__creat');

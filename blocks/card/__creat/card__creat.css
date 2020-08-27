@@ -1,0 +1,25 @@
+.card__creat {
+    font-family: Inter;
+    width: 358px;
+    height: 50px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    background: #000000;
+    color: #ffffff;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+.card__creat:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 440px) {
+    .card__creat {
+        width: 208px;
+       
+    }
+}

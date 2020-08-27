@@ -1,0 +1,18 @@
+@import url(./__close/card__close.css);
+@import url(./__content/card__content.css);
+@import url(./__creat/card__creat.css);
+@import url(./__field/card__fleid.css);
+@import url(./__heading/card__heading.css);
+@import url(./__name/__input_name.css);
+@import url(./__url/__input_url.css);
+
+.card {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);}
