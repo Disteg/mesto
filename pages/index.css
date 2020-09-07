@@ -7,11 +7,7 @@
 @import url(../blocks/element/element.css);
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__open/popup_open.css);
-@import url(../blocks/card/card.css);
-@import url(../blocks/card/__open/card_open.css);
-@import url(../blocks/imgpopup/imgpopup.css);
-@import url(../blocks/imgpopup/__open/imgpopup__open.css);
+@import url(../blocks/popup/_open/popup_open.css);
 
 
 

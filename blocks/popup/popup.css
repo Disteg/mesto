@@ -1,18 +1,23 @@
-@import url(./__content/pupup__content.css);
-@import url(./__close/popup__close.css);
-@import url(./__heading/popup__heading.css);
-@import url(./__save/popup__save.css);
-@import url(./__proffesional/__input_proffesional.css);
-@import url(./__name/__input_name.css);
-@import url(./__input/popup__input.css);
-
+@import url('./__container/popup__container.css');
+@import url('./__close/popup__close.css');
+@import url('./__title/popup__title.css');
+@import url('./__input/popup__input.css');
+@import url('./__save/popup__save.css');
+@import url('./__image-container/popup__image-container.css');
+@import url('./__image-name/popup__image-name.css');
+@import url('./__image-photo/popup__image-photo.css');
+@import url('./__name/__input_name.css');
 .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.5);}
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}

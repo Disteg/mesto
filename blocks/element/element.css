@@ -1,17 +1,9 @@
-@import url(./__img/element__img.css);
-@import url(./__content/element__content.css);
-@import url(./__name/element__name.css);
-@import url(./__like/element__like.css);
-@import url(./__delete/element__delete.css);
-@import url(./__like_active/element__like_active.css);
-
-
+@import url('./__photo/element__photo.css');
+@import url('./__card/element__card.css');
+@import url('./__name/element__name.css');
+@import url('./__like/element__like.css');
+@import url('./__like/_active/element__like_active.css');
+@import url('./__delete/element__delete.css');
 .element {
-    background-color: #ffffff;
-    overflow: hidden;
-    color: #000000;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    width: 282px;
-    position: relative;}
+  position: relative;
+}
