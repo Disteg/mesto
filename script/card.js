@@ -32,7 +32,7 @@ const sectionElementCard = document.querySelector('.elements'); //Секция
  
 //Попап карточки 
 const popupImg = document.querySelector('.popup__img'); //Объявляем переменную Попапа картинки 
-const bigPhoto = document.querySelector('.popup__img-photo'); // Большая карточка
+const bigPhoto = document.querySelector('.popup__image-photo'); // Большая карточка
 
 
  
@@ -51,8 +51,9 @@ function formSubmitCard(evt){//функция добавления
       link: cardlink.value 
     }; 
   evt.preventDefault(); 
-  closePopup(popupBtnSave);  
-  sectionElementCard.prepend(createCard(newCard)); 
+  closePopup(popupImg);  
+  sectionElementCard.prepend(createCard(newCard));
+  evt.preventDefault();  
 } 
  
 addPopup.addEventListener('submit', formSubmitCard); 

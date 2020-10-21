@@ -1,6 +1,6 @@
-const editPopup = document.querySelector('.popup__profile');
-const addPopup = document.querySelector('.popup__place');
-const editBtn = document.querySelector('.profile__edit');
+const editPopup = document.querySelector('.popup__profile'); // Кнопка редактирования 
+const addPopup = document.querySelector('.popup__place'); // Кнопка добавления
+const editBtn = document.querySelector('.profile__edit'); // 
 const addBtn = document.querySelector('.profile__add');
 const profileName = document.querySelector('.profile__name');
 const popupNameInput = document.querySelector('.popup__input_name');
@@ -8,12 +8,12 @@ const popupProfileInput = document.querySelector('.popup__input_profile');
 const profileProffessional = document.querySelector('.profile__proffesional');
 const formPopup = document.querySelector('.popup__form');
 const popupBtnSave = document.querySelector('.popup__save');
-
-
 const closeBtn = document.querySelectorAll('.popup__close');
 
 const openPopup = mod => {
-  mod.classList.add('popup_open');
+  mod.classList.add('popup_open')
+  popupNameInput.value ='';
+  popupProfileInput.value ='';
 }
 
 const closePopup = mod => {
@@ -39,7 +39,7 @@ function handleFormSubmit (evt) {
     evt.preventDefault(); 
     profileName.textContent = popupNameInput.value; 
     profileProffessional.textContent = popupProfileInput.value; 
-    closePopup(evt); 
+    closePopup(editPopup); 
     popupNameInput.value ='';
     popupProfileInput.value ='';
     
