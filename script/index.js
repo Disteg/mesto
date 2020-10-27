@@ -7,7 +7,7 @@ const popupNameInput = document.querySelector('.popup__input_name');
 const popupProfileInput = document.querySelector('.popup__input_profile');
 const profileProfessional = document.querySelector('.profile__professional');
 const formPopup = document.querySelector('.popup__form');
-const formPopupAdd = document.querySelector('.popup__formAdd');//fформа места
+const formPopupAdd = document.querySelector('.popup__form_add');//форма места
 const closeBtn = document.querySelectorAll('.popup__close'); //кнопка закрытия
 
 
