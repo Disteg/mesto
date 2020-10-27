@@ -8,15 +8,13 @@ const popupProfileInput = document.querySelector('.popup__input_profile');
 const profileProfessional = document.querySelector('.profile__professional');
 const formPopup = document.querySelector('.popup__form');
 const closeBtn = document.querySelectorAll('.popup__close');
-const popup = document.querySelector('.popup');
 
 
-function openPopup (popup){ popup.classList.add('popup_open')
-  popupNameInput.value =profileName.textContent;
-  popupProfileInput.value =profileProfessional.textContent;
-}
+function openPopup (popup){
+   popup.classList.add('popup_open');}
 
-function closePopup(popup){popup.classList.remove('popup_open');}
+function closePopup(popup){
+  popup.classList.remove('popup_open');}
 
 
 addBtn.addEventListener('click', () => {
@@ -37,8 +35,8 @@ closeBtn.forEach((button) => {
 function handleFormSubmit (evt) { 
     evt.preventDefault(); 
     profileName.textContent = popupNameInput.value; 
-    profileProfessional.textContent = popupProfileInput.value; 
-    closePopup(editPopup);  
+    profileProfessional.textContent = popupProfileInput.value;
+    closePopup(editPopup);
 } 
 
 formPopup.addEventListener('submit', handleFormSubmit); 
@@ -64,28 +62,24 @@ const sectionElementCard = document.querySelector('.elements'); //Секция
 //Попап карточки 
 const popupImg = document.querySelector('.popup_img'); //Объявляем переменную Попапа картинки 
 const bigPhoto = document.querySelector('.popup__image-photo'); // Большая карточка
+const photoText = document.querySelector('.popup__img-text'); //текст под фото карточки
 
 
  
-
- 
-
 //Добавление карточки 
- 
-const cardName = addPopup.querySelector('#cardnamepop'); //id input name 
-
+ const cardName = addPopup.querySelector('#cardnamepop'); //id input name 
 const cardLink = addPopup.querySelector('#cardlinkpop'); //id input url 
-function formSubmitCard(evt){//функция добавления 
 
+
+function formSubmitCard(evt){
+  evt.preventDefault();
   const newCard = { 
-      name: cardName.value, 
-      link: cardLink.value 
-    }; 
-  closePopup(addPopup);  
+      name: cardName.value,
+      link: cardLink.value,};
+    closePopup(addPopup)
   sectionElementCard.prepend(createCard(newCard));
-  evt.preventDefault(); 
-} 
- 
+  ;}
+  formPopup.reset();
 addPopup.addEventListener('submit', formSubmitCard); 
  
  
@@ -110,7 +104,7 @@ function createCard(element) {
         openPopup(popupImg);
         const image = event.target.closest('.element__photo');
         bigPhoto.src = image.src;
-        document.querySelector('.popup__img-text').textContent = element.name;
+       photoText.textContent = element.name;
     })
     return cardElement; 
 } 
