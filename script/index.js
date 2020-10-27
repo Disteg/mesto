@@ -1,13 +1,15 @@
-const editPopup = document.querySelector('.popup_profile'); // Кнопка редактирования 
-const addPopup = document.querySelector('.popup_place'); // Кнопка добавления
-const editBtn = document.querySelector('.profile__edit'); // 
-const addBtn = document.querySelector('.profile__add');
+const editPopup = document.querySelector('.popup_profile'); // попап редактирования
+const addPopup = document.querySelector('.popup_place'); // попап места
+const editBtn = document.querySelector('.profile__edit'); // кнопа редактирования 
+const addBtn = document.querySelector('.profile__add'); // кнопка места
 const profileName = document.querySelector('.profile__name');
 const popupNameInput = document.querySelector('.popup__input_name');
 const popupProfileInput = document.querySelector('.popup__input_profile');
 const profileProfessional = document.querySelector('.profile__professional');
 const formPopup = document.querySelector('.popup__form');
-const closeBtn = document.querySelectorAll('.popup__close');
+const formPopupAdd = document.querySelector('.popup__formAdd');//fформа места
+const closeBtn = document.querySelectorAll('.popup__close'); //кнопка закрытия
+
 
 
 function openPopup (popup){
@@ -36,6 +38,7 @@ function handleFormSubmit (evt) {
     evt.preventDefault(); 
     profileName.textContent = popupNameInput.value; 
     profileProfessional.textContent = popupProfileInput.value;
+    formPopup.reset();
     closePopup(editPopup);
 } 
 
@@ -66,22 +69,8 @@ const photoText = document.querySelector('.popup__img-text'); //текст по�
 
 
  
-//Добавление карточки 
- const cardName = addPopup.querySelector('#cardnamepop'); //id input name 
-const cardLink = addPopup.querySelector('#cardlinkpop'); //id input url 
 
-
-function formSubmitCard(evt){
-  evt.preventDefault();
-  const newCard = { 
-      name: cardName.value,
-      link: cardLink.value,};
-    closePopup(addPopup)
-  sectionElementCard.prepend(createCard(newCard));
-  ;}
-  formPopup.reset();
-addPopup.addEventListener('submit', formSubmitCard); 
- 
+  
  
  
 //Перебор массива 
@@ -110,15 +99,28 @@ function createCard(element) {
 } 
 
 
+//Добавление карточки 
+const cardName = document.querySelector('#cardnamepop'); //id input name 
+const cardLink = document.querySelector('#cardlinkpop'); //id input url 
 
+
+function formSubmitCard(evt){
+  evt.preventDefault();
+  const newCard = {
+  name: cardName.value,
+  link: cardLink.value,};
+  sectionElementCard.prepend(createCard(newCard));
+  formPopupAdd.reset();
+  closePopup(addPopup);
+}
+formPopupAdd.addEventListener('submit', formSubmitCard);
+  
+  
  
 
 initialCards.forEach((element) => { 
     sectionElementCard.append(createCard(element)); 
 }); 
-
-
-
 
 
 
