@@ -38,7 +38,6 @@ function handleFormSubmit (evt) {
     evt.preventDefault(); 
     profileName.textContent = popupNameInput.value; 
     profileProfessional.textContent = popupProfileInput.value;
-    formPopup.reset();
     closePopup(editPopup);
 } 
 
