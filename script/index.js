@@ -10,7 +10,7 @@ const formPopup = document.querySelector('.popup__form');
 const formPopupAdd = document.querySelector('.popup__form_add');//форма места
 const closeBtn = document.querySelectorAll('.popup__close'); //кнопка закрытия
 
-
+//Спасибо за ваше терпение, просто эти дни я на нервах весь и хочу успеть сдать всё, чтобы окончательно не вылететь. 
 
 function openPopup (popup){
    popup.classList.add('popup_open');}
@@ -24,8 +24,9 @@ addBtn.addEventListener('click', () => {
 });
 
 editBtn.addEventListener('click', () => {
-  openPopup(editPopup);
-});
+  popupNameInput.value =  profileName.textContent;
+  popupProfileInput.value =profileProfessional.textContent;
+  openPopup(editPopup);});
 
 
 closeBtn.forEach((button) => {
