@@ -9,14 +9,39 @@ const profileProfessional = document.querySelector('.profile__professional');
 const formPopup = document.querySelector('.popup__form');
 const formPopupAdd = document.querySelector('.popup__form_add');//форма места
 const closeBtn = document.querySelectorAll('.popup__close'); //кнопка закрытия
+const popup = Array.from(document.querySelectorAll('.popup'));
 
-//Спасибо за ваше терпение, просто эти дни я на нервах весь и хочу успеть сдать всё, чтобы окончательно не вылететь. 
+
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
+    popup.forEach((popup) => {
+      if (popup.classList.remove('popup_open')) {
+        closePopup(popup)
+      }
+    })
+  }
+}
+
+function closePopupClick(evt) {
+  if (evt.target.classList.contains('popup_open')) {
+    closePopup(evt.target)
+  }
+}
 
 function openPopup (popup){
-   popup.classList.add('popup_open');}
+    document.addEventListener('click', closePopupClick)
+    document.addEventListener('keyup', closePopupEsc)
+    popup.classList.add('popup_open');}
 
 function closePopup(popup){
-  popup.classList.remove('popup_open');}
+    document.removeEventListener('click', closePopupClick)
+    document.removeEventListener('keyup', closePopupEsc)
+    popup.classList.remove('popup_open');
+  };
+  
+
+  
+  
 
 
 addBtn.addEventListener('click', () => {
@@ -28,12 +53,12 @@ editBtn.addEventListener('click', () => {
   popupProfileInput.value =profileProfessional.textContent;
   openPopup(editPopup);});
 
-
-closeBtn.forEach((button) => {
-  button.addEventListener('click', (event) => {
-    closePopup(event.target.closest('.popup'));
+  closeBtn.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      closePopup(event.target.closest('.popup'));
+    });
   });
-});
+
 
 function handleFormSubmit (evt) { 
     evt.preventDefault(); 
