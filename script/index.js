@@ -1,42 +1,15 @@
-import { Card } from "./Card.js"
-import { FormValidation } from "./FormValidator.js"
-
-const popupImg = document.querySelector('.popup_img'); //Объявляем переменную Попапа картинки 
-const bigPhoto = document.querySelector('.popup__image-photo'); // Большая карточка
-const photoText = document.querySelector('.popup__img-text'); //текст под фото карточки
-const sectionElementCard = document.querySelector('.elements'); //Секция элемента
-const templateElem = document.querySelector('#elementTemplate');
 const editPopup = document.querySelector('.popup_profile'); // попап редактирования
 const addPopup = document.querySelector('.popup_place'); // попап места
 const editBtn = document.querySelector('.profile__edit'); // кнопа редактирования 
 const addBtn = document.querySelector('.profile__add'); // кнопка места
-const profileName = document.querySelector('.profile__name'); //имя аватара
-const popupNameInput = document.querySelector('.popup__input_name'); //строка имени
-const popupProfileInput = document.querySelector('.popup__input_profile'); //строка профессии
-const cardName = document.querySelector('#cardnamepop'); //строка инпута Name места
-const cardLink = document.querySelector('#cardlinkpop'); //строка инпута Link места
-
-const profileProfessional = document.querySelector('.profile__professional'); //профессия
-const formPopup = document.querySelector('.popup__form'); //форма попапа
+const profileName = document.querySelector('.profile__name');
+const popupNameInput = document.querySelector('.popup__input_name');
+const popupProfileInput = document.querySelector('.popup__input_profile');
+const profileProfessional = document.querySelector('.profile__professional');
+const formPopup = document.querySelector('.popup__form');
 const formPopupAdd = document.querySelector('.popup__form_add');//форма места
 const closeBtn = document.querySelectorAll('.popup__close'); //кнопка закрытия
 const popup = Array.from(document.querySelectorAll('.popup'));
-
-const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__submit-button',
-  inactiveButtonClass: 'popup__submit-button_disabled',
-  inputErrorClass: 'popup__input_error',
-  errorClass: 'popup__input-error_active'
-};
-
-const editFormValidator = new FormValidator(validationConfig, cardName)
-  editFormValidator.enableValidation()
-
-  const addFormValidator = new FormValidator(validationConfig, cardLink)
-  addFormValidator.enableValidation()
-
 
 
 function closePopupEsc(evt) {
@@ -66,6 +39,11 @@ function closePopup(popup){
     popup.classList.remove('popup_open');
   };
   
+
+  
+  
+
+
 addBtn.addEventListener('click', () => {
   openPopup(addPopup);
 });
@@ -91,7 +69,35 @@ function handleFormSubmit (evt) {
 
 formPopup.addEventListener('submit', handleFormSubmit); 
 
-/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Section Card 
+ 
+
+const sectionElementCard = document.querySelector('.elements'); //Секция 
+ 
+//Попап карточки 
+const popupImg = document.querySelector('.popup_img'); //Объявляем переменную Попапа картинки 
+const bigPhoto = document.querySelector('.popup__image-photo'); // Большая карточка
+const photoText = document.querySelector('.popup__img-text'); //текст под фото карточки
+
+
+ 
+
+  
+ 
+ 
 //Перебор массива 
  
 function createCard(element) { 
@@ -119,7 +125,8 @@ function createCard(element) {
 
 
 //Добавление карточки 
-
+const cardName = document.querySelector('#cardnamepop'); //id input name 
+const cardLink = document.querySelector('#cardlinkpop'); //id input url 
 
 
 function formSubmitCard(evt){
@@ -133,12 +140,12 @@ function formSubmitCard(evt){
 }
 formPopupAdd.addEventListener('submit', formSubmitCard);
   
-  */
+  
  
- initialCards.forEach((carddata) => {
-  const cardElement = addElement(carddata.link, carddata.name, templateElem)
-  sectionElementCard.append(cardElement)
-})
+
+initialCards.forEach((element) => { 
+    sectionElementCard.append(createCard(element)); 
+}); 
 
 
 
