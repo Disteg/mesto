@@ -31,6 +31,13 @@ const validationConfig = {
   errorClass: 'popup__input-error_active'
 };
 
+const editFormValidator = new FormValidator(validationConfig, cardName)
+  editFormValidator.enableValidation()
+
+  const addFormValidator = new FormValidator(validationConfig, cardLink)
+  addFormValidator.enableValidation()
+
+
 
 function closePopupEsc(evt) {
   if (evt.key === 'Escape') {
