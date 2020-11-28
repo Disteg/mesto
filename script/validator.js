@@ -40,7 +40,7 @@ const setEventListeners = (
             })
         })
     }
-g
+
 const toggleButtonState = (
     inputList, buttonElement, {inactiveButtonClass}) => {
         if (hasInvalidInput(inputList)) {

@@ -32,17 +32,7 @@
   
         <!--ELEMENT CARD-->
         <section class="elements">
-            <!--TEMPLATE-->
-            <template id="element">
-                <div  class="element">
-                    <img class="element__photo">
-                    <div class="element__card">
-                        <p class="element__name"></p>
-                        <button type="button" class="element__like"></button>
-                    </div> 
-                    <button class="element__delete"></button>
-                </div>
-            </template>
+
         </section>
          
 
@@ -56,59 +46,65 @@
         <p class="footer__text">&copy; 2020 Mesto Russia</p>
     </footer>
 
-
-    <!--Попап формы профиля-->
-
-    <div class="popup popup_profile">
-        <div class="popup__container">
-            <button type="button" class="popup__close"></button>
-            <h2 class="popup__title">Редактировать профиль</h2>
-            <form id='form-profile'  name="form" class="popup__form" novalidate>
-                <input id="input-name" type="text" name="input-name" placeholder="Имя"  class="popup__input popup__input_name"  minlength="2" maxlength="40" required/>
-                <span id="name-error" class="popup__input_error"></span>
-                <input id="input-profile" type="text" name="input-profile" placeholder="О себе" class="popup__input popup__input_profile" minlength="2" maxlength="200" required/>
-                <span id="profile-error" class="popup__input_error"></span>
-                <button id='button-save' type="submit" class="popup__submit-button">Сохранить</button>
-            </form>
+    <template id="template-card">
+        <div class="element">
+            <img class="element__photo" src="{{link}}"">
+            <div class="element__card">
+                <p class="element__name">{{name}}</p>
+                <button type="button" class="element__like"></button>
+            </div> 
+            <button class="element__delete"></button>
         </div>
-    </div>
-
-
-
-
-
-    <!--Попап формы карточки-->
-
-    <div class="popup popup_place">
-        <div class="popup__container">
-            <button type="button" class="popup__close"></button>
-            <h2 class="popup__title">Новое место</h2>
-            <form id='form-place'  name="form" class="popup__form popup__form_add" novalidate>
-                <input id='input-name' type="text" name="input-name" placeholder="Название"  class="popup__input popup__input_name" id="cardnamepop" minlength="2" maxlength="30" required />
-                <span id="place-error" class="popup__input_error"></span>
-                <input id='input-place' type="url" name="input-place" placeholder="Ссылка на картинку" class="popup__input popup__input_place" id="cardlinkpop" minlength="2" maxlength="200" required/>
-                <span id="link-error" class="popup__input_error"></span>
-                <button id='button-place' type="submit" class="popup__submit-button">Сохранить</button>
-            </form>
+    </template>
+    <template id="template-popup-image">
+        <div class="popup popup_img popup_open">
+            <div class="popup__image-container">
+                <button class="popup__close" type="button"></button>
+                <img class="popup__image-photo" src="{{link}}" alt="">
+                <div class="popup__img-text">{{name}}</div>
+            </div>
         </div>
-    </div>
-
-    
-
-
-
-    <!--Попап формы картинки-->
-    <div class = "popup popup_img">
-        <div class="popup__image-container">
-            <button class="popup__close" type="button"></button>
-            <img class="popup__image-photo" src="" alt="">
-            <div class="popup__img-text"></div>
+    </template>
+    <template id="template-popup-image-add">
+        <div class="popup popup_place popup_open">
+            <div class="popup__container">
+                <button type="button" class="popup__close"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form id='form-place' name="form" class="popup__form popup__form_add" novalidate>
+                    <label>
+                        <input type="text" name="input-name" placeholder="Название" class="popup__input popup__input_name" minlength="2" maxlength="30" required />
+                    </label>
+                    <label>
+                        <input type="url" name="input-place" placeholder="Ссылка на картинку" class="popup__input popup__input_place" minlength="2" maxlength="200" required/>
+                    </label>
+                    <button id='button-place' type="submit" class="popup__submit-button">Сохранить</button>
+                </form>
+            </div>
         </div>
-    </div>
-    <script src="./script/card.js"></script>
-    <script src="./script/index.js"></script>
-    <script src='./script/validator.js'></script>
-    
+    </template>
+    <template id="template-popup-edit">
+        <div class="popup popup_profile popup_open">
+            <div class="popup__container">
+                <button type="button" class="popup__close"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form name="form" class="popup__form" novalidate>
+                    <label>
+                        <input value="{{name}}" type="text" name="input-name" placeholder="Имя" class="popup__input popup__input_name"  minlength="2" maxlength="40" required/>
+                    </label>
+                    <label>
+                        <input id="input-profile" value="{{text}}" type="text" name="input-profile" placeholder="О себе" class="popup__input popup__input_profile" minlength="2" maxlength="200" required/>
+                    </label>
+                    <button type="submit" class="popup__submit-button">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </template>
+
+    <script src="./script/initialCards.js"></script>
+    <script type="module" src="./script/Card.js"></script>
+    <script type="module" src="./script/Popup.js"></script>
+    <script type="module" src="./script/FormValidator.js"></script>
+    <script type="module" src="./script/index.js"></script>
     
 </body>
 </html>
