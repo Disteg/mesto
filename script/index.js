@@ -11,7 +11,7 @@ initialCards.forEach((cardItem) => {
 });
 
 document.querySelector('.profile__add').addEventListener('click', event => {
-  const popup = new Popup({}, '#template-popup-image-add');
+  const popup = new Popup({}, 'newPhoto');
   const formPopup = popup.element.querySelector('.popup__form');
 
   formPopup.addEventListener('submit', event => {
@@ -26,8 +26,8 @@ document.querySelector('.profile__add').addEventListener('click', event => {
       link: formPopup.querySelector('input[name="input-place"]').value
     });
 
-    sectionElementCard.append(card.element);
-    popup.remove();
+    sectionElementCard.prepend(card.element);
+    popup.close();
   });
 });
 
@@ -39,7 +39,7 @@ document.querySelector('.profile__edit').addEventListener('click', event => {
   const popup = new Popup({
     name: profileNameEl.innerHTML,
     text: profileTextEl.innerHTML
-  }, '#template-popup-edit');
+  }, 'editProfile');
 
   const formPopup = popup.element.querySelector('.popup__form');
 
@@ -52,7 +52,7 @@ document.querySelector('.profile__edit').addEventListener('click', event => {
 
     profileNameEl.innerHTML = formPopup.querySelector('input[name="input-name"]').value;
     profileTextEl.innerHTML = formPopup.querySelector('input[name="input-profile"]').value;
-    popup.remove();
+    popup.close();
   });
 
 });

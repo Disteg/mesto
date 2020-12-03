@@ -43,9 +43,11 @@ export class Card {
       }
       if (imgBtn) {
         new Popup({
-          name: this.name,
-          link: this.link
-        }, '#template-popup-image');
+            name: this.name,
+            link: this.link
+          },
+          'photo'
+        );
       }
     });
   }
