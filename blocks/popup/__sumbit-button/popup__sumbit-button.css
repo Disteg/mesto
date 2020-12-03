@@ -1,12 +1,12 @@
 .popup__submit-button {
-    margin-top: 48px; 
-    color: #FFF; 
-    background-color: #000; 
-    width: 100%; 
-    height: 50px; 
-    border: none; 
-    border-radius: 2px; 
-    outline: none; 
+    margin-top: 48px;
+    color: #FFF;
+    background-color: #000;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
 }
 
 .popup__submit-button:hover {
